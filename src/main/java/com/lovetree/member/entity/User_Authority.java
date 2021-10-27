@@ -1,13 +1,14 @@
 package com.lovetree.member.entity;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 
-import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.FetchType.*;
 
 @Entity
-@Table(name = "member_authority")
-public class Member_Authority {
+@Table(name = "user_authority")
+public class User_Authority {
 
     @Id
     private Long id;
@@ -17,6 +18,7 @@ public class Member_Authority {
     private Authority authority;
 
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @JoinColumn(name = "user_id")
+    private User user;
+
 }
